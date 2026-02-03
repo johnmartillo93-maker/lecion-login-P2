@@ -1,0 +1,53 @@
+-- ============================================
+-- BASE DE DATOS: sistema_alumnos
+-- MOTOR: MySQL / MariaDB
+-- ============================================
+
+DROP DATABASE IF EXISTS sistema_alumnos;
+CREATE DATABASE sistema_alumnos
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE sistema_alumnos;
+
+-- ============================================
+-- TABLA USUARIOS (LOGIN)
+-- ============================================
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    clave VARCHAR(100) NOT NULL
+);
+
+-- Usuario de prueba
+INSERT INTO usuarios (usuario, clave)
+VALUES ('admin', '1234');
+
+-- ============================================
+-- TABLA Usuario 
+-- ============================================
+CREATE TABLE Sesiones(
+id INT NOT NULL AUTO_INCREMENT,
+IdUsuario INT NOT NULL,
+Fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+);
+
+INSERT registro_usuarios (IdUsuario)
+VAlUES('NombreDelUsuario01');
+SELECT * FROM Sesiones;
+-- ============================================
+-- TABLA ALUMNOS
+-- ============================================
+CREATE TABLE alumnos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cedula VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20),
+    fechaNacimiento DATE NOT NULL
+);
+
+
+SELECT * FROM alumnos;
