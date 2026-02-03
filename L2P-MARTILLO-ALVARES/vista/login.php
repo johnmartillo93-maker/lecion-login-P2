@@ -56,7 +56,7 @@ include __DIR__ . '/layout/header.php';
                     <?php endif; ?>
 
                     <button class="btn btn-primary w-100 btn-lg">
-                        <i class="bi bi-box-arrow-in-right"></i> Iniciar Secion
+                        <i class="bi bi-box-arrow-in-right"></i> Entrar
                     </button>
                 </form>
 

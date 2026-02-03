@@ -1,22 +1,16 @@
 <?php
-// ===============================
-// INICIO DE SESIÓN
-// ===============================
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// ===============================
-// CONTROLADORES
-// ===============================
 
-require_once 'controlador/UsuarioControlador.php';
+require_once __DIR__ . '/controlador/UsuarioControlador.php';
 
 
 $accion = $_GET['accion'] ?? 'login';
 
-switch ($accion) {
 
+switch ($accion) {
 
     // ---------- LOGIN ----------
     case 'login':
@@ -43,6 +37,16 @@ switch ($accion) {
         include 'vista/menu.php';
         break;
 
-   }
+        case 'consulta':
+        include 'vista/Usuario/consulta.php';
+        break;
 
-?>
+        
+
+    
+    // ---------- ERROR ----------
+    default:
+        header("Location: index.php?accion=login");
+        exit;
+
+}

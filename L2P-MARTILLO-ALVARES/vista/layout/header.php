@@ -56,7 +56,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php if(isset($_SESSION['usuario'])): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?accion=menu">
-                            <i class="bi bi-speedometer2"></i> MENU Principal 
+                            <i class="bi bi-speedometer2"></i> Panel
                         </a>
                     </li>
                     <li class="nav-item">

@@ -1,7 +1,4 @@
 <?php
-
-use Usuariodao as GlobalUsuariodao;
-
 require_once 'bd/conexion.php';
 require_once 'modelo/Usuario.php';
 
@@ -35,6 +32,12 @@ class UsuarioDao {
         $resultado = $stmt->get_result();
         $fila = $resultado->fetch_assoc();
 
+        if ($fila) {
+            $user = new Usuario();
+            $user->id = $fila['id'];
+            $user->usuario = $fila['usuario'];
+            return $user;
+        }
 
         return null;
     }

@@ -1,7 +1,6 @@
 <?php
-class Usuariodao{
+class Usuario {
     public $id;
-    public $Usuario;
+    public $usuario;
     public $clave;
 }
-?>
